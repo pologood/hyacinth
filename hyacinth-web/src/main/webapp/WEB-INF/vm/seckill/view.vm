@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped formLayout m0">
+	<tr>
+		<td>seckillId:</td>
+		<td>$!{seckill.seckillId}</td>
+		<td>name:</td>
+		<td>$!{seckill.name}</td>
+	</tr>
+	<tr>
+		<td>number:</td>
+		<td>$!{seckill.number}</td>
+		<td>startTime:</td>
+		<td>$!{seckill.startTime}</td>
+	</tr>
+	<tr>
+		<td>endTime:</td>
+		<td>$!{seckill.endTime}</td>
+		<td>createTime:</td>
+		<td>$!{seckill.createTime}</td>
+	</tr>
+</table>

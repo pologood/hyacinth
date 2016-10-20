@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jd</groupId>
+		<artifactId>hyacinth</artifactId>
+		<version>1.0</version>
+	</parent>
+	
+	<artifactId>hyacinth-web</artifactId>
+	<packaging>war</packaging>
+	<name>hyacinth-web</name>
+
+	<build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+	
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+		
+		<!-- 单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+        
+        <dependency>
+            <groupId>com.jd</groupId>
+            <artifactId>hyacinth-domain</artifactId>
+           <version>${project.parent.version}</version>
+        </dependency>
+		<dependency>
+            <groupId>com.jd</groupId>
+            <artifactId>hyacinth-common</artifactId>
+            <version>${project.parent.version}</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.jd</groupId>
+            <artifactId>hyacinth-service</artifactId>
+           <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd</groupId>
+            <artifactId>hyacinth-rpc</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+</project>

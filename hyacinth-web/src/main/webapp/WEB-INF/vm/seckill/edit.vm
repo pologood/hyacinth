@@ -1,0 +1,25 @@
+<form name="seckillUpdateForm" action="/seckill/save" method="POST" data-resultType="JSON">
+	<table class="table table-bordered table-striped formLayout m0">
+		<tr>
+			<td>seckillId:</td>
+			<td><input type="text" name="seckillId" value="$!{seckill.seckillId}" placeholder="seckillId" readonly/></td>
+			<td>name:</td>
+			<td><input type="text" name="name" value="$!{seckill.name}" placeholder="name"/></td>
+		</tr>
+		<tr>
+			<td>number:</td>
+			<td><input type="text" name="number" value="$!{seckill.number}" placeholder="number"/></td>
+			<td>startTime:</td>
+			<td><input type="text" name="startTime" value="$!{seckill.startTime}" placeholder="startTime"/></td>
+		</tr>
+		<tr>
+			<td>endTime:</td>
+			<td><input type="text" name="endTime" value="$!{seckill.endTime}" placeholder="endTime"/></td>
+			<td>createTime:</td>
+			<td><input type="text" name="createTime" value="$!{seckill.createTime}" placeholder="createTime"/></td>
+		</tr>
+	</table>
+</form>
+<div class="bottomBar">
+	<button class="btn btn-primary" onclick="$('form[name=seckillUpdateForm]').submit()">保存更改</button>
+</div>
