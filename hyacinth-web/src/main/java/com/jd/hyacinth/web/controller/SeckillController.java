@@ -4,7 +4,9 @@
  */
 package com.jd.hyacinth.web.controller;
 import java.util.Date;
+
 import javax.annotation.Resource;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -12,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.jd.hyacinth.web.CustomDateEditor;
+
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.stereotype.Controller;
+
 import com.jd.hyacinth.domain.Seckill;
 import com.jd.hyacinth.domain.common.Message;
 import com.jd.hyacinth.domain.common.Page;
 import com.jd.hyacinth.service.SeckillService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -141,6 +147,13 @@ public class SeckillController{
 		}finally{
 		}
 		return msg;
+	}
+	
+	@RequestMapping(value = "/json/{id}")
+	@ResponseBody
+	public Seckill json(@PathVariable Long id){
+		Seckill seckill = seckillService.selectEntry(id);
+		return seckill;
 	}
 	
 }

@@ -113,5 +113,23 @@
 	        </props>
 	    </property>
 	</bean>
+	
+	<!-- login拦截器配置 -->
+	<bean id="loginHandlerInterceptor" class="com.jd.hyacinth.web.interceptor.LoginHandlerInterceptor"></bean>
+	
+	<!-- 配置MVC拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <!-- 以下是静态资源 -->
+            <mvc:exclude-mapping path="/im/**" />
+            <mvc:exclude-mapping path="/css/**" />
+            <mvc:exclude-mapping path="/font/**" />
+            <mvc:exclude-mapping path="/js/**" />
+			<ref bean="loginHandlerInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	
 
 </beans>

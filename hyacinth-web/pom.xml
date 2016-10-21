@@ -28,6 +28,17 @@
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <!-- worker任务调度 -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>1.8.5</version>
+        </dependency>
 		
 		<!-- 单元测试 -->
 		<dependency>

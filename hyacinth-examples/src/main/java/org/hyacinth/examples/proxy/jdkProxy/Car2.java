@@ -1,7 +1,9 @@
 package org.hyacinth.examples.proxy.jdkProxy;
 
+import org.hyacinth.examples.proxy.Car;
+
 /**
- * 使用继承方法实现代理
+ * 使用继承方法实现静态代理
  * @author baironglin
  *
  */

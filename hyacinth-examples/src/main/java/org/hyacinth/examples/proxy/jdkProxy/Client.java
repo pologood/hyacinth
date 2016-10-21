@@ -3,6 +3,8 @@ package org.hyacinth.examples.proxy.jdkProxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
+import org.hyacinth.examples.proxy.Car;
+
 public class Client {
 
 	/**

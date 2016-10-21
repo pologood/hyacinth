@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.0.xsd"
+    default-autowire="byName">
+
+    <!-- Enables the Spring Task Scheduled programming model -->
+    <task:executor id="executor" pool-size="5" />
+    <task:scheduler id="scheduler" pool-size="10" />
+    <task:annotation-driven executor="executor" scheduler="scheduler" />
+
+	<!-- Test work -->
+	<bean
+        id="TestWorker"
+        class="com.jd.hyacinth.worker.TestWorker"/>
+	<bean
+        id="TestJob"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="TestWorker" />
+		<property name="targetMethod" value="doWorker" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean
+        id="TestJTime"
+        class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="TestJob" />
+		<property name="cronExpression" value="*/10 * * * * ?"/>
+	</bean> 
+
+	<!-- 任务管理器 -->
+    <bean
+        id="analysysEngineStartQuertz"
+        lazy-init="false"
+        autowire="no"
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+             	   <!--  <ref bean="TestJTime"/>  -->     
+            </list>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">20</prop>
+            </props>
+        </property>
+        <property name="autoStartup"> 
+            <value>true</value> 
+        </property> 
+    </bean>
+</beans>

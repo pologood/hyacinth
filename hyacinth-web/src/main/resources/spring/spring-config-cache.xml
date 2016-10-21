@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+	default-autowire="byName">
+
+    <bean id="redisClient" class="com.jd.hyacinth.common.entity.RedisClient">
+        <constructor-arg index="0" value="${hyacinth.redis.ip}"/>
+        <constructor-arg index="1" value="${hyacinth.redis.port}"/>
+    </bean>
+	
+<!-- 	<bean
+        id="configClient"
+        class="com.jd.cachecloud.cfs.client.ConfigRESTClientFactoryBean"/>
+    <bean
+        id="dataJimClient"
+        class="com.jd.jim.cli.compat.ReloadableJimClientFactoryBean">
+        <property name="configClient" ref="configClient"/>
+        <property name="configId" value="${gajback.cache.data.configId}"/>
+        <property name="token" value="${gajback.cache.data.token}"/>
+    </bean>
+    <bean
+        id="blackListJimClient"
+        class="com.jd.jim.cli.compat.ReloadableJimClientFactoryBean">
+        <property name="configClient" ref="configClient"/>
+        <property name="configId" value="${infostore.cache.configId}"/>
+        <property name="token" value="${infostore.cache.token}"/>
+    </bean>
+    <bean
+        id="infoStoreJimClient"
+        class="com.jd.jim.cli.compat.ReloadableJimClientFactoryBean">
+        <property name="configClient" ref="configClient"/>
+        <property name="configId" value="${infostore.cache.configId}" />
+        <property name="token" value="${infostore.cache.token}"/>
+    </bean>
+    <bean
+        id = "infoStoreCacheUtils"
+        class = "com.jd.risk.common.util.InfoStoreCacheUtils">
+        <property name="dataJimClient" ref ="infoStoreJimClient"/>
+    </bean>
+
+    Start: Spring cache configuration
+    Spring cache manager. Typically, every service should be configured in the set below
+    <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+        <property name="caches">
+            <set>
+                <bean class="com.jd.risk.common.springcache.RedisCache">
+                    <property name="redisClient" ref="redisClient"/>
+                    <property name="name" value="blackWhiteNames"/>
+                    <property name="customerKeyPrefix" value="bw"/>
+                    <property name="expireTime" value="600"/>
+                </bean>
+                <bean class="com.jd.risk.common.springcache.RedisCache">
+                    <property name="redisClient" ref="redisClient"/>
+                    <property name="name" value="dynamicConfig"/>
+                    <property name="customerKeyPrefix" value="dc"/>
+                    <property name="expireTime" value="600"/>
+                </bean>
+                <bean class="com.jd.risk.common.springcache.RedisCache">
+                    <property name="redisClient" ref="redisClient"/>
+                    <property name="name" value="infostore"/>
+                    <property name="customerKeyPrefix" value="is"/>
+                    <property name="expireTime" value="600"/>
+                </bean>
+                <bean class="com.jd.risk.common.springcache.RedisCache">
+                    <property name="redisClient" ref="redisClient"/>
+                    <property name="name" value="ruleobj"/>
+                    <property name="customerKeyPrefix" value="ro"/>
+                    <property name="expireTime" value="600"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+    Redis client setting dynamic
+    <bean
+        id="redisClient"
+        class="com.jd.jim.cli.compat.ReloadableJimClientFactoryBean">
+        <property name="configClient" ref="configClient"/>
+        <property name="configId" value="${infostore.cache.configId}"/>
+        <property name="token" value="${infostore.cache.token}"/>
+    </bean>
+    End: Spring cache configuration  --> 
+         
+</beans>
