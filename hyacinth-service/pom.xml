@@ -20,14 +20,19 @@
             <artifactId>hyacinth-domain</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        <dependency>
+<!--         <dependency>
 			<groupId>com.jd</groupId>
 			<artifactId>hyacinth-common</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.jd</groupId>
+			<artifactId>hyacinth-dao</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jd</groupId>
-			<artifactId>hyacinth-dao</artifactId>
+			<artifactId>hyacinth-examples</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
     </dependencies>

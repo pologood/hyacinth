@@ -10,6 +10,7 @@ public class Client {
 		Car car = (Car)proxy.getProxy(Car.class);
 		car.moveLikeTrain();
 		car.move("wuwuwu....");
+		car.getClassLoader();
 	}
 
 }

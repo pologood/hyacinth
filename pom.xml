@@ -91,7 +91,7 @@
    
 	<dependencyManagement>
 		<dependencies>
-	        <dependency>
+<!-- 	        <dependency>
 	            <groupId>com.jd.common</groupId>
 	            <artifactId>jd-common-springmvc</artifactId>
 	            <version>1.2-SNAPSHOT</version>
@@ -105,7 +105,7 @@
 			            <artifactId>commons-dbcp</artifactId>
 	                </exclusion>
 	            </exclusions>
-	        </dependency>
+	        </dependency>  -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
@@ -213,22 +213,6 @@
 				<artifactId>fastjson</artifactId>
 				<version>1.1.31</version>
 			</dependency>
-	        <!-- sms依赖-->
-			<dependency>
-				<groupId>com.jd.common</groupId>
-				<artifactId>jd-common-hrm</artifactId>
-				<version>1.1.2</version>
-				<exclusions>
-	                <exclusion>
-	                    <groupId>org.springframework</groupId>
-	                    <artifactId>spring</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                	<groupId>com.jd.common</groupId>
-	                    <artifactId>jd-common-struts</artifactId>
-	                </exclusion>
-	            </exclusions>
-			</dependency>
 			<dependency>
 				<groupId>org.aspectj</groupId>
 				<artifactId>aspectjweaver</artifactId>
@@ -239,6 +223,21 @@
 				<artifactId>cglib-nodep</artifactId>
 				<version>2.1_3</version>
 			</dependency>
+			
+			<!-- velocity -->
+			<dependency>
+			    <groupId>org.apache.velocity</groupId>
+			    <artifactId>velocity</artifactId>
+			    <version>1.6.3</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity-tools -->
+			<dependency>
+			    <groupId>org.apache.velocity</groupId>
+			    <artifactId>velocity-tools</artifactId>
+			    <version>2.0</version>
+			</dependency>
+			
 			
 			<!-- 单元测试 -->
 			<dependency>
@@ -283,7 +282,7 @@
 		</pluginManagement>
 	</build>
 	
- 	<repositories>
+<!--  	<repositories>
         <repository>
             <snapshots>
                 <enabled>false</enabled>
@@ -315,6 +314,6 @@
             <name>plugins-snapshots</name>
             <url>http://artifactory.360buy-develop.com/plugins-snapshots</url>
         </pluginRepository>
-    </pluginRepositories> 
+    </pluginRepositories>  -->
     
 </project>

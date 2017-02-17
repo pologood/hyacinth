@@ -1,10 +1,13 @@
 package org.hyacinth.examples.http;
 
 import java.io.IOException;  
+
 import org.apache.commons.httpclient.*;  
 import org.apache.commons.httpclient.methods.GetMethod;  
 import org.apache.commons.httpclient.params.HttpMethodParams;  
-  
+import org.hyacinth.examples.annotation.Config;
+ 
+@Config(value="test")
 public class GetSample{  
     public static void main(String[] args) {  
         // 构造HttpClient的实例  

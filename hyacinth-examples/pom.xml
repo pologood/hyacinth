@@ -17,6 +17,19 @@
   </properties>
   <dependencies>
   
+ 	<!-- UCC依赖 -->
+	<dependency>
+        <groupId>com.jd.std.ucc</groupId>
+        <artifactId>ucc-client</artifactId>
+        <version>3.0.1</version>
+   	</dependency>
+  
+  	<!-- Spring相关依赖 -->
+  	<dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context-support</artifactId>
+    </dependency>
+  	
  	<!-- Apache common DbUtils工具包 -->
 	<dependency>
 	    <groupId>commons-httpclient</groupId>
@@ -44,6 +57,43 @@
 	    <version>3.1</version>
 	</dependency>
 	
+	<dependency>
+		<groupId>com.jd.risk.common</groupId>
+		<artifactId>common-core</artifactId>
+		<version>1.4.5-SNAPSHOT</version>
+	</dependency>	
+	
+	<!-- groovy -->
+	<dependency>
+	    <groupId>org.codehaus.groovy</groupId>
+	    <artifactId>groovy-all</artifactId>
+	    <version>2.4.4</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.codehaus.groovy</groupId>
+		<artifactId>groovy</artifactId>
+		<version>2.1.6</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.groovy</groupId>
+		<artifactId>groovy-jsr223</artifactId>
+		<version>2.1.6</version>
+	</dependency>
+	
+	<!-- webMagic -->
+	<dependency>
+	    <groupId>us.codecraft</groupId>
+	    <artifactId>webmagic-core</artifactId>
+	    <version>0.5.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>us.codecraft</groupId>
+	    <artifactId>webmagic-extension</artifactId>
+	    <version>0.5.3</version>
+	</dependency>
+	
+	
 		
     <dependency>
       <groupId>junit</groupId>
@@ -52,5 +102,16 @@
       <scope>test</scope>
     </dependency>
     
+	<dependency>
+           <groupId>com.jd</groupId>
+           <artifactId>hyacinth-common</artifactId>
+           <version>${project.parent.version}</version>
+		<exclusions>
+               <exclusion>
+                   <groupId>org.springframework</groupId>
+                   <artifactId>spring</artifactId>
+               </exclusion>
+           </exclusions>
+       </dependency>
   </dependencies>
 </project>

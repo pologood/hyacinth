@@ -4,6 +4,8 @@
  */
 package com.jd.hyacinth.service;
 
+import org.hyacinth.examples.annotation.Config;
+
 import com.jd.hyacinth.domain.Seckill;
 import com.jd.hyacinth.service.base.BaseService;
 
@@ -12,6 +14,7 @@ import com.jd.hyacinth.service.base.BaseService;
  * @author J-ONE
  * @since 2016-10-20
  */
+
 public interface SeckillService extends BaseService<Seckill,Long> {
 	
 }

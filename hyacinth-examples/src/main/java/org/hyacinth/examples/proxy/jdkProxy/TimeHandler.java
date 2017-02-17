@@ -43,4 +43,5 @@ public class TimeHandler<T> implements InvocationHandler {
 		Class<?> cls = target.getClass();
 		return Proxy.newProxyInstance(cls.getClassLoader(), cls.getInterfaces(), this);
 	}
+	
 }

@@ -1,0 +1,3 @@
+def getTime(){return date.getTime();}
+def sayHello(name,age){return 'Hello,I am ' + name + ',age' + age;}
+def join(String[] list) {return list.join('--');}

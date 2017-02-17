@@ -36,7 +36,7 @@ public class Client {
 		Car car = new Car();
 		
 		Moveable m1 = (Moveable)(new TimeHandler<Car>().bind(car));
-		m1.move();
+		m1.move("bad");
 //		System.out.println("m1:" + m1.hashCode());
 		
 		InvocationHandler h = new TimeHandler<Car>(car); 

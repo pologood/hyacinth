@@ -14,8 +14,7 @@
 	default-autowire="byName"> 
 
 	 <!-- mvc controller -->
-    <context:component-scan base-package="com.jd.hyacinth.web" />
-	<context:component-scan base-package="com.jd.hyacinth.rpc.ump" />
+    <context:component-scan base-package="com.jd.hyacinth" />
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
 	<context:annotation-config/>
     
@@ -29,7 +28,7 @@
     <bean id="conversionService"
         class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="formatterRegistrars">
-            <bean class="com.jd.common.springmvc.converter.DefaultFormatterRegistrar" />
+            <bean class="com.jd.hyacinth.common.web.DefaultFormatterRegistrar" />
         </property>
     </bean>
 
@@ -126,6 +125,8 @@
             <mvc:exclude-mapping path="/css/**" />
             <mvc:exclude-mapping path="/font/**" />
             <mvc:exclude-mapping path="/js/**" />
+            <mvc:exclude-mapping path="/demos/**" />
+            <mvc:exclude-mapping path="/statics/**" />
 			<ref bean="loginHandlerInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

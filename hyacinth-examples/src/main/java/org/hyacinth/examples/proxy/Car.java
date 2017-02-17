@@ -5,6 +5,16 @@ import java.util.Random;
 import org.hyacinth.examples.proxy.jdkProxy.Moveable;
 
 public class Car implements Moveable{
+	
+	private String color;
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 
 	@Override
 	public void move() {
@@ -27,5 +37,17 @@ public class Car implements Moveable{
 	
 	public void moveLikeTrain() {
 		System.out.println("模拟火车行驶...");
+	}
+	
+	public void getClassLoader() {
+		ClassLoader loader = this.getClass().getClassLoader();
+		System.out.println("current loader " + loader);
+		System.out.println("parent loader " + loader.getParent());
+		System.out.println("grantParent loader " + loader.getParent().getParent());
+	}
+	
+	@Override
+	public String toString() {
+		return this.color;
 	}
 }

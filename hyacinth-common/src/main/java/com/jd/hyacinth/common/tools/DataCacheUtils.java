@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
-import com.jd.common.util.StringUtils;
 import com.jd.hyacinth.common.entity.RedisClient;
 
 /**

@@ -5,8 +5,11 @@
 package com.jd.hyacinth.service.impl;
 
 import javax.annotation.Resource;
+
+import org.hyacinth.examples.annotation.Config;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.jd.hyacinth.domain.Seckill;
 import com.jd.hyacinth.dao.base.BaseDao;
 import com.jd.hyacinth.dao.SeckillDao;
@@ -18,6 +21,7 @@ import com.jd.hyacinth.service.SeckillService;
  * @author J-ONE
  * @since 2016-10-20
  */
+@Config(value="test")
 @Service("seckillService")
 public class SeckillServiceImpl extends BaseServiceImpl<Seckill,Long> implements SeckillService {
 	
